@@ -1,0 +1,6 @@
+spring:
+  # JPA配置
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
