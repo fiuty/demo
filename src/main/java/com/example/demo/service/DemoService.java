@@ -10,4 +10,7 @@ public interface DemoService {
     String properties2();
 
     String properties3();
+
+    String properties4();
+
 }

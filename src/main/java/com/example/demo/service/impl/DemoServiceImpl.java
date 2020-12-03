@@ -4,6 +4,7 @@ import com.example.demo.config.DefaultPropertiesConfig;
 import com.example.demo.config.DefaultYamlConfig;
 import com.example.demo.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,13 @@ public class DemoServiceImpl implements DemoService {
     @Autowired
     private DefaultYamlConfig defaultYamlConfig;
 
+    @Value("${default.student.name}")
+    private String name;
+
+    @Value("${default.student.age}")
+    private int age;
+
+
     @Override
     public String properties1() {
         return defaultConfig.getName() + ":" + defaultConfig.getAge();
@@ -35,5 +43,10 @@ public class DemoServiceImpl implements DemoService {
     @Override
     public String properties3() {
         return defaultYamlConfig.getName() + ":" + defaultYamlConfig.getAge();
+    }
+
+    @Override
+    public String properties4() {
+        return name + ":" + age;
     }
 }

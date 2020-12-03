@@ -31,4 +31,9 @@ public class DemoController {
     public String properties3() {
         return demoService.properties3();
     }
+
+    @GetMapping("/properties4")
+    public String properties4() {
+        return demoService.properties4();
+    }
 }
